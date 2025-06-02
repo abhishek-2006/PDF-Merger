@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: #333;
+}
+
+.container {
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 2rem 2.5rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #222;
+}
+
+#dropzone {
+  border: 2.5px dashed #a1a5aa;
+  border-radius: 12px;
+  padding: 3rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  user-select: none;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#dropzone.dragover {
+  background-color: #e3f2fd;
+  border-color: #2196f3;
+  color: #0d47a1;
+}
+
+#dropzone svg {
+  width: 48px;
+  height: 48px;
+  fill: #2196f3;
+}
+
+#dropzone p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+#fileInput {
+display: none;
+}
+
+#fileList {
+  margin-top: 1.5rem;
+  max-height: 180px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  background: #fafafa;
+}
+
+#fileList ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#fileList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+#fileList li:last-child {
+  border-bottom: none;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #f44336;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0 6px;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.remove-btn:hover {
+  color: #d32f2f;
+}
+
+#mergeBtn {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 14px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  background: #2196f3;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
+}
+
+#mergeBtn:disabled {
+  background: #90caf9;
+  cursor: not-allowed;
+  box-shadow: none;
+}
