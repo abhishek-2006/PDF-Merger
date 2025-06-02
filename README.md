@@ -1,6 +1,6 @@
 # PDF-Merger
 
-A sleek, modern, and fully client-side **PDF merging tool**
+A sleek, modern, and fully client-side **PDF merging tool**.
 
 ## 🚀 Features
 
