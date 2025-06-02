@@ -7,10 +7,7 @@ A sleek, modern, and fully client-side **PDF merging tool**
 - 📁 **Drag & Drop** or Click to upload PDFs
 - ➕ Upload **multiple PDFs from different folders**
 - 🧹 Clean file listing with **remove** option
-- ✅ Smart **validation**: requires at least 2 files to merge
 - 📦 **PDF-lib** for merging directly in browser (no backend)
-- 🔥 **Top-center toast notifications** for actions
-- 💾 Asks user for **custom filename** on download
 - 🧽 Clears selected files after merge for a fresh start
 - 📱 Fully responsive UI with modern, minimal design
 
