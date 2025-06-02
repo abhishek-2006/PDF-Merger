@@ -20,6 +20,16 @@ A sleek, modern, and fully client-side **PDF merging tool**.
 | Toast UI    | [ToastifyJS](https://apvarun.github.io/toastify-js/) |
 | Icons       | Custom SVGs (Cloud Upload) |
 
+## 📦 Installation
+1. Clone this repository to your local machine:
+   ```bash
+   git clone https://github.com/abhishek-2006/Currency-Converter.git
+
+2. Open the project folder and open the index.html file in your browser.
+
+## 📄 License
+Licensed under the MIT License. Feel free to modify and use this project.
+
 ## 💡 How to Use
 
 1. **Open** `index.html` in a browser (or use Live Server).
@@ -35,3 +45,8 @@ pdf-merger/
 ├── index.html          # Main UI
 ├── style.css           # Styles
 └── script.js           # Logic (file handling, merging, toast)
+
+## 👨‍💻 Author
+Developed by Abhishek Shah.
+
+⭐ Give this project a star if you found it helpful!
