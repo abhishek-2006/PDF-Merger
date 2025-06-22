@@ -38,14 +38,6 @@ Licensed under the MIT License. Feel free to modify and use this project.
 4. **Enter a filename** when prompted.
 5. Merged PDF will **auto-download**, and your file list will reset.
 
-## 📂 File Structure
-
-```bash
-pdf-merger/
-├── index.html          # Main UI
-├── style.css           # Styles
-└── script.js           # Logic (file handling, merging, toast)
-
 ## 👨‍💻 Author
 Developed by Abhishek Shah.
 
