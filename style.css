@@ -1,135 +1,265 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+    /* Color Palette */
+    --primary-indigo: #4f46e5;      /* Main brand color (Used for Merge button) */
+    --info-blue: #3B82F6;           /* Info card/state */
+    --accent-orange: #f97316;       /* Accent color for highlights/active states (Used in Footer/Hover) */
+    --danger-red: #dc2626;          /* Danger/Penalty card/state */
+    --success-green: #10b981;       /* Success card/state */
+    --warning-yellow: #F59E0B;      /* Warning card/state */
+    --danger-bg: #FEE2E2;
+    
+    /* Backgrounds & Text */
+    --bg-light: #f9fafb;
+    --text-dark: #1f2937;
+    
+    --footer-bg: #e0e7ff; /* Very light indigo background */
+    --footer-text: #4b5563; /* Darker gray text */
+    --footer-hover: #1e3a8a; /* Dark blue on hover */
   }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f4f6f8;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #eef2ff 0%, #f9fafb 50%, #f9fafb 100%); 
   margin: 0;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start; /* Changed to start for better footer placement */
   align-items: center;
-  padding: 2rem;
-  color: #333;
+  padding-top: 2rem; /* Adjusted padding */
+  color: var(--text-dark);
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
 .container {
-  background: white;
+  background: #fff;
   width: 100%;
-  max-width: 600px;
+  max-width: 900px;
+  border-radius: 16px; /* Slightly larger radius for softer look */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+  padding: 2.5rem 3rem; /* Increased padding */
+  margin-bottom: 2rem;
+}
+
+/* --- ENHANCED DROPZONE STYLES --- */
+#dropzone {
+  border: 3px dashed #b8c2ff; /* Lighter dashed line */
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  padding: 2rem 2.5rem;
+  padding: 3rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  color: var(--primary-indigo); /* Primary color text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  background: #f0f4ff; /* Light background */
+}
+
+#dropzone:hover {
+  background-color: #eef2ff;
+  border-color: var(--primary-indigo);
+  transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+#dropzone.dragover {
+  background-color: #e3f2fd;
+  border-color: var(--info-blue);
+  color: var(--info-blue);
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.2);
+}
+
+#dropzone svg {
+  width: 56px; /* Slightly larger icon */
+  height: 56px;
+  fill: var(--primary-indigo); /* Primary color icon */
+}
+
+#dropzone p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+#fileInput {
+  display: none;
+}
+
+/* --- FOOTER STYLES (app-footer) --- */
+.app-footer { 
+    width: 100vw; /* Full viewport width */
+    background: var(--footer-bg); 
+    color: var(--footer-text); 
+    padding: 1.5rem 0; 
+    text-align: center; 
+    margin-top: auto; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    font-size: 1rem;
+    border-top: 5px solid var(--primary-indigo);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+.app-footer a { 
+    color: var(--primary-indigo); 
+    text-decoration: none; 
+    font-weight: 600; 
+    border-bottom: 1px solid transparent; 
+    transition: 0.3s; 
+}
+.app-footer a:hover { 
+    color: var(--footer-hover); 
+    border-color: var(--footer-hover); 
 }
 
 h1 {
   text-align: center;
   margin-bottom: 1.5rem;
   font-weight: 700;
-  color: #222;
+  color: var(--text-dark);
 }
 
-#dropzone {
-  border: 2.5px dashed #a1a5aa;
-  border-radius: 12px;
-  padding: 3rem 1rem;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s, border-color 0.3s;
-  user-select: none;
-  color: #555;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-#dropzone.dragover {
-  background-color: #e3f2fd;
-  border-color: #2196f3;
-  color: #0d47a1;
-}
-
-#dropzone svg {
-  width: 48px;
-  height: 48px;
-  fill: #2196f3;
-}
-
-#dropzone p {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-#fileInput {
-display: none;
+/* === File List Layout === */
+#fileListContainer {
+  margin-top: 1.5rem;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 0.5rem;
 }
 
 #fileList {
-  margin-top: 1.5rem;
-  max-height: 180px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  background: #fafafa;
-}
-
-#fileList ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Slightly wider tiles */
+  gap: 20px; /* Increased gap */
 }
 
 #fileList li {
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 0.45rem 0;
-  border-bottom: 1px solid #e0e0e0;
-  font-size: 0.95rem;
-  color: #333;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #e5e7eb; /* Thinner, softer border */
+  border-radius: 12px;
+  padding: 12px;
+  cursor: grab;
+  height: 230px; /* Increased height */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
 
-#fileList li:last-child {
-  border-bottom: none;
+#fileList li:hover {
+  border-color: var(--primary-indigo);
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.2);
 }
 
+/* --- Page Count Indicator --- */
+.page-count {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: var(--primary-indigo);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 10;
+}
+
+/* === Preview Styles === */
+.file-preview {
+  width: 100%;
+  height: 160px;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px; /* Rounded corners for preview */
+  margin-bottom: 10px;
+}
+
+/* === File Info === */
+.file-name {
+  font-size: 0.95rem; /* Slightly larger name */
+  font-weight: 600;
+}
+
+/* === Drag Handle (Hidden as per previous request) === */
+.drag-handle {
+  display: none; 
+}
+
+/* === Remove Button --- */
 .remove-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #f44336;
-  font-size: 1.1rem;
-  font-weight: bold;
-  padding: 0 6px;
-  line-height: 1;
-  transition: color 0.2s ease;
+  position: absolute;
+  top: 8px; /* Moved slightly inside */
+  right: 8px;
+  background: var(--danger-red);
+  color: #fff;
+  font-size: 0.9rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .remove-btn:hover {
-  color: #d32f2f;
+  opacity: 1;
+  background-color: #b91c1c;
 }
 
+/* --- Sortable Feedback --- */
+.sortable-ghost {
+  opacity: 0.4;
+  background-color: #e0e7ff !important; /* Lighter ghost background */
+  border-color: var(--primary-indigo) !important;
+  transform: scale(0.98);
+}
+
+/* --- ENHANCED MERGE BUTTON --- */
 #mergeBtn {
   margin-top: 2rem;
   width: 100%;
-  padding: 14px 0;
-  font-size: 1.2rem;
+  padding: 16px 0; /* Taller button */
+  font-size: 1.3rem; /* Larger font */
   font-weight: 700;
-  color: white;
-  background: #2196f3;
+  color: #fff;
+  background: var(--primary-indigo);
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.25s ease;
-  box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
+  transition: background-color 0.25s ease, transform 0.1s;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+}
+
+#mergeBtn:hover:not(:disabled) {
+  background: #4338ca;
+  transform: translateY(-1px);
 }
 
 #mergeBtn:disabled {
-  background: #90caf9;
+  background: #a5b4fc; /* Lighter primary-indigo shade */
   cursor: not-allowed;
   box-shadow: none;
 }

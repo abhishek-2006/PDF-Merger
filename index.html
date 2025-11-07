@@ -4,30 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PDF Merger</title>
-
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
-    
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"/>
 </head>
+
 <body>
   <div class="container">
     <h1>Merge PDFs</h1>
-
+    
     <label id="dropzone" for="fileInput">
-      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#4caf50" viewBox="0 0 24 24">
-        <path d="M17.657 16H19a4 4 0 0 0 .005-8A6.5 6.5 0 0 0 6.342 9.105 4.5 4.5 0 0 0 7 18h4v-4H8l4-5 4 5h-3v4h4.657z"/>
-      </svg>
-      <p>Drag & drop PDFs here or click to select files</p>
-      <input type="file" id="fileInput" multiple accept="application/pdf" />
-    </label>
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="64"
+      height="64"
+      fill="#4caf50"
+      viewBox="0 0 24 24"
+      >
+      <path d="M17.657 16H19a4 4 4 0 0 .005-8A6.5 6.5 0 0 0 6.342 9.105 4.5 4.5 0 0 0 7 18h4v-4H8l4-5 4 5h-3v4h4.657z"/>
+    </svg>
+    <p>Drag & drop PDFs here or click to select files</p>
+    <input type="file" id="fileInput" multiple accept="application/pdf" />
+  </label>
+  
+  <div
+  id="fileListContainer"
+  aria-live="polite"
+  aria-atomic="true"
+  role="region"
+  ></div>
 
-    <div id="fileList" aria-live="polite" aria-atomic="true" role="region"></div>
+  <button id="mergeBtn" disabled>Merge PDFs</button>
+</div>
 
-    <button id="mergeBtn" disabled>Merge PDFs</button>
+<footer class="app-footer">
+  <div>
+    <div class="flex flex-col justify-center items-center text-center">
+      <div class="footer-text-content">
+        &copy; 2025 PDF Merger | Designed by: 
+        <a href="https://github.com/abhishek-2006" 
+          target="_blank" 
+          class="footer-link">
+          Abhishek Shah
+        </a>
+      </div>
+    </div>
   </div>
+</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
